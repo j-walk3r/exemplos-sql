@@ -1,0 +1,19 @@
+manipulacao de datas com Mysql e Oracle:
+
+
+Oracle:
+   
+Insert:  SYSDATE + INTERVAL '30' DAY (dia, mes ano)
+         UPDATE lancamento SET LDATA = SYSDATE + INTERVAL '30' DAY where lDATA = '25/01/17' AND CODLANC = '8399202'; 
+
+select:  
+
+        select sysdate + INTERVAL '20' DAY from dual; //data 
+        select sysdate + INTERVAL '15' MINUTE from dual; //minutos
+Mysql:
+    
+Insert: adddate(sysdate(), interval 30 DAY)(dia,mes,ano)
+        update preven_tabela_ndo_cartao set data_alteracao = adddate(sysdate(), interval 30 DAY) where id = 4; 
+
+select:                 
+        SELECT ADDDATE('2008-05-15', INTERVAL 10 DAY) as required_date;  
